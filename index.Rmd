@@ -1,0 +1,58 @@
+---
+title: "GF-0604 Procesamiento de datos geográficos<br>Tarea 01: Implementación de un tablero de control mediante flexdashboard"
+author: "Manuel Vargas"
+date: "2020-05-28"
+output:
+  html_document:
+    theme: readable    
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Descripción general
+En este tarea programada, elaborará un tablero de control con el paquete [flexdasboard](https://cran.r-project.org/web/packages/flexdashboard/) del lenguaje de programación [R](https://www.r-project.org/), para visualizar datos de la epidemia de [COVID-19](https://en.wikipedia.org/wiki/Coronavirus_disease_2019) en Costa Rica. El resultado final será un documento en la sintaxis [R Markdown](https://rmarkdown.rstudio.com/), publicado en [GitHub Pages](https://pages.github.com/).
+
+## Fecha de entrega y entregables
+La fecha límite de entrega de este laboratorio es el **lunes 8 de junio de 2020**. **NO SE ACEPTARÁN TAREAS ENTREGADAS DESPUÉS DE ESA FECHA**. Debe enviarle al profesor por correo electrónico la dirección del sitio en GitHub Pages resultante.
+
+La tarea puede realizarse en grupos de un máximo de tres estudiantes.
+
+## Trabajo previo
+Se recomienda leer el material preparado por el profesor y consultar los recursos listados en:
+
+* [Tutorial sobre flexdashboard](https://geoprocesamiento-2020i.github.io/tutorial-flexdashboard/).
+
+## Tareas a realizar
+Con los datos de casos de COVID-19 contenidos en [https://github.com/geoprocesamiento-2020i/datos/blob/master/covid19/casos/cr/cr-covid19-cantones.geojson](https://github.com/geoprocesamiento-2020i/datos/blob/master/covid19/casos/cr/cr-covid19-cantones.geojson) y con el paquete ```flexdashboard```, elabore un tablero de control con los siguientes componentes (el valor porcentual de cada uno en la nota final de la tarea se muestra entre paréntesis):
+
+1. (20%) Mapa de coropletas con colores que reflejen la cantidad de casos confirmados por cantón.
+- Los colores deben corresponder a una degradación o "rampa" (ej. rojos, azules, colores entre rojo y azul), de manera que reflejen adecuadamente la cantidad de casos. NO DEBEN SER ALEATORIOS.
+- Al hacer clic sobre el polígono de un cantón, en la ventana emergente debe mostrarse el nombre del cantón, y la cantidad de casos confirmados, recuperados, fallecidos y activos.
+
+2. (20%) Mapa de coropletas con colores que reflejen la cantidad de casos confirmados por provincia.
+- Los colores deben corresponder a una degradación o "rampa" (ej. rojos, azules, colores entre rojo y azul), de manera que reflejen adecuadamente la cantidad de casos. NO DEBEN SER ALEATORIOS.
+- Al hacer clic sobre el polígono de una provincia, en la ventana emergente debe mostrarse el nombre de la provincia, y la cantidad de casos confirmados, recuperados, fallecidos y activos.
+
+3. (20%) Gráfico de barras que muestre la cantidad de casos confirmados por provincia.
+- Las barras del gráfico deben estar ordenadas de acuerdo con la cantidad de casos.
+- Las barras deben tener una etiqueta que muestre la cantidad de casos y otra que muestre el nombre de la provincia.
+- Los ejes del gráfico deben estar etiquetados.
+
+4. (20%) Tabla que muestre la cantidad de casos confirmados, recuperados, fallecidos en cada cantón.
+- Las columnas deben tener encabezados.
+- La tabla debe estar ordenada por nombre del cantón.
+
+5. (20%) Cuadros informativos (_valueBoxes_) que muestren la cantidad total (i.e. para todo el país) de:
+- Casos confirmados.
+- Casos recuperados.
+- Casos fallecidos.
+- Casos activos.
+
+
+Los mapas deben ser implementados con el paquete ```leaflet```, el gráfico con ```ggplot2``` y las tablas con ```knitr``` y ```kableExtra```.
